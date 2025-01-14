@@ -1,0 +1,26 @@
+From 45dc03eff52d06689757c68de7a9abac750777fd Mon Sep 17 00:00:00 2001
+From: jjm2473 <jjm2473@gmail.com>
+Date: Wed, 14 Jun 2023 20:16:20 +0800
+Subject: [PATCH] [h264d_vdpu34x]: hor stride align to 64
+
+hor stride must be aligned to 64 on RGA3 on RK3588
+---
+ mpp/hal/rkdec/h264d/hal_h264d_vdpu34x.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mpp/hal/rkdec/h264d/hal_h264d_vdpu34x.c b/mpp/hal/rkdec/h264d/hal_h264d_vdpu34x.c
+index 50af4f27..dbad9593 100644
+--- a/mpp/hal/rkdec/h264d/hal_h264d_vdpu34x.c
++++ b/mpp/hal/rkdec/h264d/hal_h264d_vdpu34x.c
+@@ -328,7 +328,7 @@ static RK_U32 rkv_ver_align(RK_U32 val)
+ 
+ static RK_U32 rkv_hor_align(RK_U32 val)
+ {
+-    return MPP_ALIGN(val, 16);
++    return MPP_ALIGN(val, 64);
+ }
+ 
+ static RK_U32 rkv_hor_align_256_odds(RK_U32 val)
+-- 
+2.31.0
+
