@@ -1,0 +1,11 @@
+--- a/core/RockchipRga.cpp
++++ b/core/RockchipRga.cpp
+@@ -226,7 +226,7 @@ RGA_SINGLETON_STATIC_INSTANCE(RockchipRg
+         ret = local_drmIoctl(bo_info->fd, DRM_IOCTL_MODE_MAP_DUMB, &arg);
+         if (ret)
+             return ret;
+-        map = mmap64(0, bo_info->size, PROT_READ | PROT_WRITE, MAP_SHARED, bo_info->fd, arg.offset);
++        map = mmap(0, bo_info->size, PROT_READ | PROT_WRITE, MAP_SHARED, bo_info->fd, arg.offset);
+         if (map == MAP_FAILED)
+             return -EINVAL;
+         bo_info->ptr = map;
