@@ -68,7 +68,7 @@ $(call Package/ffmpeg/Default)
  CATEGORY:=Multimedia
  TITLE+= program
  DEPENDS+= +libffmpeg-mpp
- PROVIDES:= ffmpeg
+# PROVIDES:= ffmpeg
 endef
 
 define Package/ffmpeg-mpp/description
@@ -83,7 +83,7 @@ $(call Package/ffmpeg/Default)
  CATEGORY:=Multimedia
  TITLE+= CLI media identifier
  DEPENDS+= +libffmpeg-mpp
- PROVIDES:= ffprobe
+# PROVIDES:= ffprobe
 endef
 
 define Package/ffprobe-mpp/description
@@ -98,7 +98,7 @@ $(call Package/ffmpeg/Default)
  CATEGORY:=Libraries
  TITLE+= libraries
  DEPENDS+= +zlib +libbz2
- PROVIDES:= libffmpeg
+# PROVIDES:= libffmpeg
  TITLE+= (full)
  DEPENDS+= +AUDIO_SUPPORT:alsa-lib +libgnutls +libopus \
     +SOFT_FLOAT:shine \
