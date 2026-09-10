@@ -50,6 +50,7 @@ This package provides the demo.
 endef
 
 CMAKE_OPTIONS += -DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 	-DHAVE_DRM=ON
 
 define Package/rkmpp/install
